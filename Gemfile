@@ -36,8 +36,14 @@ gem 'jbuilder', '~> 2.5'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
+# Use Bootstrap
+gem 'bootstrap', '~> 4.0.0'
+
 # Use Devise for authentication
 gem 'devise'
+
+# Bootstrap JavaScript depends on jQuery
+gem 'jquery-rails'
 
 # Use SendGrid to deliver email
 gem 'sendgrid-ruby'
