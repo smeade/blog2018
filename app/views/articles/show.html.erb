@@ -1,14 +1,37 @@
-<p id="notice"><%= notice %></p>
+<div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded box-shadow">
+  <img class="mr-3" src="https://getbootstrap.com/assets/brand/bootstrap-outline.svg" alt="" width="48" height="48">
+  <div class="lh-100">
+    <h6 class="mb-0 text-white lh-100"><%= @article.title %></h6>
+    <small>Informational text here</small>
+  </div>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
+<div class="my-3 p-4 bg-white rounded box-shadow">
+  <form>
 
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p>
+    <div class="border-bottom pb-2 mb-4">
+      <h5 class="float-left">
+        <%= @article.title %>
+      </h5>
+      <small>
+      <%= link_to 'Edit', edit_article_path(@article), class: "float-right text-uppercase font-weight-light" %>
+      </small>
+      <div class="clearfix"></div>
+    </div>
 
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
+    <div class="form-group">
+      <small class="text-uppercase text-muted">Title</small>
+      <%= simple_format @article.title %>
+    </div>
+
+    <div class="form-group">
+      <small class="text-uppercase text-muted">Text</small>
+      <%= simple_format @article.text %>
+    </div>
+    <hr/>
+    <div>
+      <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-primary' %>
+      <%= link_to 'Back', articles_path, class: 'btn btn-sm btn-link' %>
+    </div>
+  </form>
+</div>
