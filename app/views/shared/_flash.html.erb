@@ -1,5 +1,5 @@
 <% flash.each do |name, msg| %>
-  <%= content_tag(:div, class: "alert alert-#{name=='notice' ? 'success': name} mt-3") do%>
+  <%= content_tag(:div, class: "alert alert-#{name=='notice' ? 'success': name}") do%>
     <%=msg%>
     <button type="button" class="close" data-dismiss="alert">&times;</button>
   <%end%>
