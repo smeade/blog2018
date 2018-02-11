@@ -1,27 +1,25 @@
 <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded box-shadow">
   <img class="mr-3" src="https://getbootstrap.com/assets/brand/bootstrap-outline.svg" alt="" width="48" height="48">
   <div class="lh-100">
-    <h6 class="mb-0 text-white lh-100">Articles</h6>
+    <h3 class="mb-0 text-white lh-100">Articles</h3>
     <small>Informational text here</small>
   </div>
 </div>
 
 <div class="my-3 p-4 bg-white rounded box-shadow">
-  <div class="border-bottom pb-2 mb-4">
-    <h5 class="float-left">
-      Articles
-    </h5>
+  <div class="border-bottom border-gray pb-0 mb-0">
+    <h6 class="float-left">Articles</h6>
     <small>
-    <%= link_to 'New Article', new_article_path, class: "float-right text-uppercase font-weight-light" %>
+      <%= link_to 'New Article', new_article_path, class: "float-right text-success text-uppercase" %>
     </small>
     <div class="clearfix"></div>
   </div>
 
-  <table class="table table-hover">
+  <table class="table">
     <thead class="text-uppercase">
       <tr>
-        <th class="font-weight-light text-muted">Title</th>
-        <th class="font-weight-light text-muted">Text</th>
+        <th><small>Title</small></th>
+        <th><small>Text</small></th>
         <th></th>
       </tr>
     </thead>
@@ -33,8 +31,8 @@
           <td><%= article.text %></td>
           <td class="text-right text-uppercase">
             <small>
-            <%= link_to 'Edit', edit_article_path(article) %> |
-            <%= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?' } %>            
+            <%= link_to 'Edit', edit_article_path(article), class: 'text-muted' %> |
+            <%= link_to 'Delete', article, method: :delete, data: { confirm: 'Are you sure?' }, class: 'text-muted'  %>
             </small>
           </td>
         </tr>
