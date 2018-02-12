@@ -17,7 +17,7 @@
 </div>
 
 <div class="my-3 p-4 bg-white rounded box-shadow">
-  <form>
+  <%= form_with(model: @article, local: true, class: "needs-validation") do |form| %>
     <div class="border-bottom pb-2 mb-4">
       <h5 class="float-left">
         <%= @article.title %>
@@ -28,19 +28,26 @@
       <div class="clearfix"></div>
     </div>
 
-    <div class="form-group">
-      <small class="text-uppercase text-muted">Title</small>
-      <%= simple_format @article.title %>
+    <div class="row">
+      <div class="col-sm-6 mb-3">
+        <label for="title" class="">Title</label><br/>
+        <span class="form-control-plaintext">
+        <%= @article.title %>
+        </span>
+      </div>
+
+      <div class="col-sm-6 mb-3">
+        <label for="text" class="">Text</label>
+        <span class="form-control-plaintext">
+        <%= simple_format(@article.text) %>
+        </span>
+      </div>
     </div>
 
-    <div class="form-group">
-      <small class="text-uppercase text-muted">Text</small>
-      <%= simple_format @article.text %>
-    </div>
     <hr/>
     <div>
       <%= link_to 'Edit', edit_article_path(@article), class: 'btn btn-primary' %>
       <%= link_to 'Back', articles_path, class: 'btn btn-sm btn-link' %>
     </div>
-  </form>
+  <% end %>
 </div>

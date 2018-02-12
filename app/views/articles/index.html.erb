@@ -24,7 +24,7 @@
     <div class="clearfix"></div>
   </div>
 
-  <table class="table table-sm">
+  <table class="table">
     <thead class="text-uppercase">
       <tr>
         <th><small>Title</small></th>
@@ -48,7 +48,6 @@
       <% end %>
     </tbody>
   </table>
-
   <hr/>
   <%= will_paginate @articles, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
 </div>

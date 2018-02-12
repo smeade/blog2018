@@ -39,17 +39,25 @@
     </div>
   <% end %>
 
-  <%= form_with(model: @article, local: true) do |form| %>
-    <div class="form-group">
-      <small class="text-uppercase text-muted">Title</small>
-      <%= form.text_field :title, class: "form-control" %>
-      <div class="invalid-feedback">
-        Title is required.
+  <%= form_with(model: @article, local: true, class: "needs-validation") do |form| %>
+    <div class="row">
+      <div class="col-sm-6 mb-3">
+        <label for="title" class="">Title</label>
+        <%= form.text_field :title, class: "form-control", placeholder: "The title" %>
+        <small class="text-muted">Title of the article</small>
+        <div class="invalid-feedback">
+          Title is required.
+        </div>
       </div>
-    </div>
-    <div class="form-group">
-      <small class="text-uppercase text-muted">Text</small>
-      <%= form.text_area :text, class: "form-control" %>
+
+      <div class="col-sm-6 mb-3">
+        <label for="text" class="">Text</label>
+        <%= form.text_area :text, class: "form-control", placeholder: "The text" %>
+        <small class="text-muted">Text of the article</small>
+        <div class="invalid-feedback">
+          Text is required.
+        </div>
+      </div>
     </div>
     <hr/>
     <div>
